@@ -263,7 +263,3 @@ The lanenet project refers to the following projects:
 - [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)
 
 
-## Contact
-
-Scan the following QR to disscuss :)
-![qr](./data/source_image/qr.jpg)
