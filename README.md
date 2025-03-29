@@ -7,7 +7,7 @@ and instance semantic segmentation using discriminative loss function for real t
 The main network architecture is as follows:
 
 `Network Architecture`
-![NetWork_Architecture](./data/source_image/network_architecture.png)
+![NetWork_Architecture](./lanenet-lane-detection/data/source_image/network_architecture.png)
 
 ## Installation
 This software has only been tested on ubuntu 16.04(x64), python3.5, cuda-9.0, cudnn-7.0 with a GTX-1070 GPU. 
@@ -40,19 +40,19 @@ The results are as follows:
 
 `Test Input Image`
 
-![Test Input](./data/tusimple_test_image/0.jpg)
+![Test Input](./lanenet-lane-detection/data/tusimple_test_image/0.jpg)
 
 `Test Lane Mask Image`
 
-![Test Lane_Mask](./data/source_image/lanenet_mask_result.png)
+![Test Lane_Mask](./lanenet-lane-detection/data/source_image/lanenet_mask_result.png)
 
 `Test Lane Binary Segmentation Image`
 
-![Test Lane_Binary_Seg](./data/source_image/lanenet_binary_seg.png)
+![Test Lane_Binary_Seg](./lanenet-lane-detection/data/source_image/lanenet_binary_seg.png)
 
 `Test Lane Instance Segmentation Image`
 
-![Test Lane_Instance_Seg](./data/source_image/lanenet_instance_seg.png)
+![Test Lane_Instance_Seg](./lanenet-lane-detection/data/source_image/lanenet_instance_seg.png)
 
 If you want to evaluate the model on the whole tusimple test dataset you may call
 ```
@@ -68,7 +68,7 @@ I test the model on the whole tusimple lane
 detection dataset and make it a video. You may catch a glimpse of it bellow.
 
 `Tusimple test dataset gif`
-![tusimple_batch_test_gif](./data/source_image/lanenet_batch_test.gif)
+![tusimple_batch_test_gif](./lanenet-lane-detection/data/source_image/lanenet_batch_test.gif)
 
 ## Train your own model
 #### Data Preparation
@@ -102,17 +102,17 @@ python tools/train_lanenet_tusimple.py
 You may monitor the training process using tensorboard tools
 
 During my experiment the `Total loss` drops as follows:  
-![Training loss](./data/source_image/total_loss.png)
+![Training loss](./lanenet-lane-detection/data/source_image/total_loss.png)
 
 The `Binary Segmentation loss` drops as follows:  
-![Training binary_seg_loss](./data/source_image/binary_seg_loss.png)
+![Training binary_seg_loss](./lanenet-lane-detection/data/source_image/binary_seg_loss.png)
 
 The `Instance Segmentation loss` drops as follows:  
-![Training instance_seg_loss](./data/source_image/instance_seg_loss.png)
+![Training instance_seg_loss](./lanenet-lane-detection/data/source_image/instance_seg_loss.png)
 
 ## Experiment
 The accuracy during training process rises as follows: 
-![Training accuracy](./data/source_image/accuracy.png)
+![Training accuracy](./lanenet-lane-detection/data/source_image/accuracy.png)
 
 Please cite my repo [lanenet-lane-detection](https://github.com/MaybeShewill-CV/lanenet-lane-detection) if you use it.
 
@@ -122,7 +122,7 @@ You must be interested in recently released SAM model. Here's a repo using clip 
 [segment-anything-u-specify](https://github.com/MaybeShewill-CV/segment-anything-u-specify).
 
 <p align="left">
-  <img src='./data/source_image/sam_clip_seg.png' alt='segment-anything-u-specify'>
+  <img src='./lanenet-lane-detection/data/source_image/sam_clip_seg.png' alt='segment-anything-u-specify'>
 </p>
 
 ## Serve Your Model
@@ -130,7 +130,7 @@ You must be interested in recently released SAM model. Here's a repo using clip 
 If you want to serve your model via a web server you may be interested in [mortred_model_server](https://github.com/MaybeShewill-CV/mortred_model_server) which is a high performace web server for DNN vision models  :fire::fire::fire:
 
 <p align="left">
-  <img src='./data/source_image/mortred_model_server.png' alt='mortred_model_server'>
+  <img src='./lanenet-lane-detection/data/source_image/mortred_model_server.png' alt='mortred_model_server'>
 </p>
 
 ## Recently updates 2018.11.10
@@ -191,11 +191,11 @@ POSTPROCESS:
     DBSCAN_MIN_SAMPLES: 1000
 ```
 The inference result was
-![black_mask](./data/source_image/black_mask.png)
+![black_mask](./lanenet-lane-detection/data/source_image/black_mask.png)
 
 When I enlarge the dbscan DBSCAN_EPS param from 0.35 to 0.5 and reduce DBSCAN_MIN_SAMPLES from 1000 to 250. The infer
 ence result was
-![black_mask_after_adjust](./data/source_image/black_mask_after_adjust.png)
+![black_mask_after_adjust](.lanenet-lane-detection/data/source_image/black_mask_after_adjust.png)
 
 Some more detailed discussion you may find in [discussion module](https://github.com/MaybeShewill-CV/lanenet-lane-detection/discussions/561#discussion-4104802)
 
@@ -210,7 +210,7 @@ python tools/test_lanenet.py --weights_path /PATH/TO/YOUR/CKPT_FILE_PATH
 
 Before you test the example custom data remember to adjust dbscan cluster params following instruction above and the test
 result should be like
-![black_mask_after_adjust](./data/source_image/black_mask_after_adjust.png)
+![black_mask_after_adjust](./lanenet-lane-detection/data/source_image/black_mask_after_adjust.png)
 
 To get better lane detection result on your own data you'd better train a new model on custom dataset rather than
 using the pretrained model directly.
